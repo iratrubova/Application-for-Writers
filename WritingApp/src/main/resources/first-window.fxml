@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="firstWindowAnchor" prefHeight="447.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FirstWindowController">
+   <children>
+      <ImageView fx:id="imageLogo" fitHeight="55.0" fitWidth="61.0" layoutX="26.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="appName" layoutX="103.0" layoutY="72.0" text="NAME">
+         <font>
+            <Font name="JetBrains Mono Regular" size="12.0" />
+         </font></Label>
+      <Button fx:id="openProjectButton" alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="143.0" mnemonicParsing="false" onAction="#openProject" prefHeight="37.0" prefWidth="133.0" text="Open project">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></Button>
+      <Button fx:id="createNewProjectButton" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="205.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="193.0" text="Create new project">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></Button>
+      <Button fx:id="settingsButton" contentDisplay="CENTER" layoutX="67.0" layoutY="350.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="102.0" text="Settings">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></Button>
+      <Button fx:id="createNewStructureButton" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="264.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="199.0" text="Create new structure">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></Button>
+      <Label fx:id="textType" layoutX="255.0" layoutY="69.0" text="Type">
+         <font>
+            <Font name="JetBrains Mono Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="textName" layoutX="255.0" layoutY="131.0" text="Name">
+         <font>
+            <Font name="JetBrains Mono Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="textLocation" layoutX="256.0" layoutY="189.0" text="Location">
+         <font>
+            <Font name="JetBrains Mono Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="textAuthor" layoutX="255.0" layoutY="253.0" text="Author">
+         <font>
+            <Font name="JetBrains Mono Regular" size="16.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="typeChoiceBox" layoutX="361.0" layoutY="68.0" prefHeight="25.0" prefWidth="170.0" />
+      <TextField fx:id="authorTextField" layoutX="361.0" layoutY="251.0" prefHeight="25.0" prefWidth="208.0">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="nameTextField" layoutX="361.0" layoutY="130.0" prefHeight="25.0" prefWidth="208.0" promptText="Project1">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="locationTextField" layoutX="361.0" layoutY="187.0" prefHeight="25.0" prefWidth="240.0">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></TextField>
+      <Button fx:id="browseButton" layoutX="559.0" layoutY="187.0" mnemonicParsing="false" onAction="#onChooseLocation" prefHeight="30.0" prefWidth="43.0" />
+      <Line fx:id="lineHorizontal" endX="396.0" layoutX="259.0" layoutY="43.0" startX="-270.0" strokeWidth="0.1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Line fx:id="lineVertical" endX="304.3771057128906" layoutX="130.0" layoutY="245.0" rotate="90.0" startX="-100.0" strokeWidth="0.1" />
+      <Label fx:id="smallAppName" layoutX="71.0" layoutY="12.0" text="Name">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="createButton" layoutX="481.0" layoutY="403.0" mnemonicParsing="false" text="Create">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></Button>
+      <Button fx:id="cancelButton" layoutX="567.0" layoutY="403.0" mnemonicParsing="false" onAction="#cancelCreateProject" text="Cancel">
+         <font>
+            <Font name="JetBrains Mono Regular" size="14.0" />
+         </font></Button>
+      <HBox fx:id="firstWindowHBox" alignment="CENTER_RIGHT" layoutY="-1.0" prefHeight="44.0" prefWidth="668.0">
+         <children>
+            <ImageView fx:id="imageSmallLogo" fitHeight="31.0" fitWidth="43.0" onMouseClicked="#handleLogoClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Pane disable="true" prefHeight="44.0" prefWidth="563.0" visible="false" />
+            <Button fx:id="closeWindowButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#closeApp" prefHeight="44.0" prefWidth="34.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <ImageView blendMode="SRC_ATOP" disable="true" fitHeight="37.0" fitWidth="34.0" layoutX="564.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="564.0">
+         <image>
+            <Image url="@img/folder%20(2).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
