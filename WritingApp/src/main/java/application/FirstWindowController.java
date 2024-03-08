@@ -20,14 +20,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FirstWindowController implements Initializable {
-    //    @FXML
-//    private Button openProjectButton;
-//    @FXML
-//    private Button createNewProjectButton;
-//    @FXML
-//    private Button createNewStructureButton;
-//    @FXML
-//    private Button settingsButton;
+
     @FXML
     private Label textType;
     @FXML
