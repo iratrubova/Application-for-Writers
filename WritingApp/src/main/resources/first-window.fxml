@@ -16,67 +16,45 @@
 
 <AnchorPane fx:id="firstWindowAnchor" prefHeight="447.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FirstWindowController">
    <children>
-      <ImageView fx:id="imageLogo" fitHeight="55.0" fitWidth="61.0" layoutX="26.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/logo.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="appName" layoutX="103.0" layoutY="72.0" text="NAME">
-         <font>
-            <Font name="JetBrains Mono Regular" size="12.0" />
-         </font></Label>
-      <Button fx:id="openProjectButton" alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="143.0" mnemonicParsing="false" onAction="#openProject" prefHeight="37.0" prefWidth="133.0" text="Open project">
+      <Button fx:id="settingsButton" contentDisplay="CENTER" layoutX="44.0" layoutY="386.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="90.0" text="Settings">
          <font>
             <Font name="JetBrains Mono Regular" size="14.0" />
          </font></Button>
-      <Button fx:id="createNewProjectButton" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="205.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="193.0" text="Create new project">
-         <font>
-            <Font name="JetBrains Mono Regular" size="14.0" />
-         </font></Button>
-      <Button fx:id="settingsButton" contentDisplay="CENTER" layoutX="67.0" layoutY="350.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="102.0" text="Settings">
-         <font>
-            <Font name="JetBrains Mono Regular" size="14.0" />
-         </font></Button>
-      <Button fx:id="createNewStructureButton" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="264.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="199.0" text="Create new structure">
-         <font>
-            <Font name="JetBrains Mono Regular" size="14.0" />
-         </font></Button>
-      <Label fx:id="textType" layoutX="255.0" layoutY="69.0" text="Type">
+      <Label fx:id="textType" layoutX="52.0" layoutY="70.0" text="Type">
          <font>
             <Font name="JetBrains Mono Regular" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="textName" layoutX="255.0" layoutY="131.0" text="Name">
+      <Label fx:id="textName" layoutX="52.0" layoutY="119.0" text="Name">
          <font>
             <Font name="JetBrains Mono Regular" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="textLocation" layoutX="256.0" layoutY="189.0" text="Location">
+      <Label fx:id="textLocation" layoutX="50.0" layoutY="171.0" text="Location">
          <font>
             <Font name="JetBrains Mono Regular" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="textAuthor" layoutX="255.0" layoutY="253.0" text="Author">
+      <Label fx:id="textAuthor" layoutX="52.0" layoutY="224.0" text="Author">
          <font>
             <Font name="JetBrains Mono Regular" size="16.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="typeChoiceBox" layoutX="361.0" layoutY="68.0" prefHeight="25.0" prefWidth="170.0" />
-      <TextField fx:id="authorTextField" layoutX="361.0" layoutY="251.0" prefHeight="25.0" prefWidth="208.0">
+      <ChoiceBox fx:id="typeChoiceBox" layoutX="176.0" layoutY="69.0" prefHeight="25.0" prefWidth="170.0" />
+      <TextField fx:id="authorTextField" layoutX="176.0" layoutY="220.0" prefHeight="25.0" prefWidth="208.0">
          <font>
             <Font name="JetBrains Mono Regular" size="14.0" />
          </font></TextField>
-      <TextField fx:id="nameTextField" layoutX="361.0" layoutY="130.0" prefHeight="25.0" prefWidth="208.0" promptText="Project1">
+      <TextField fx:id="nameTextField" layoutX="176.0" layoutY="115.0" prefHeight="25.0" prefWidth="208.0" promptText="Project1">
          <font>
             <Font name="JetBrains Mono Regular" size="14.0" />
          </font></TextField>
-      <TextField fx:id="locationTextField" layoutX="361.0" layoutY="187.0" prefHeight="25.0" prefWidth="240.0">
+      <TextField fx:id="locationTextField" layoutX="176.0" layoutY="167.0" prefHeight="25.0" prefWidth="240.0">
          <font>
             <Font name="JetBrains Mono Regular" size="14.0" />
          </font></TextField>
-      <Button fx:id="browseButton" layoutX="559.0" layoutY="187.0" mnemonicParsing="false" onAction="#onChooseLocation" prefHeight="30.0" prefWidth="43.0" />
+      <Button fx:id="browseButton" layoutX="373.0" layoutY="167.0" mnemonicParsing="false" onAction="#onChooseLocation" prefHeight="30.0" prefWidth="43.0" />
       <Line fx:id="lineHorizontal" endX="396.0" layoutX="259.0" layoutY="43.0" startX="-270.0" strokeWidth="0.1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Line fx:id="lineVertical" endX="304.3771057128906" layoutX="130.0" layoutY="245.0" rotate="90.0" startX="-100.0" strokeWidth="0.1" />
       <Label fx:id="smallAppName" layoutX="71.0" layoutY="12.0" text="Name">
          <font>
             <Font name="JetBrains Mono Regular" size="14.0" />
@@ -94,7 +72,7 @@
          <children>
             <ImageView fx:id="imageSmallLogo" fitHeight="31.0" fitWidth="43.0" onMouseClicked="#handleLogoClick" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/logo.png" />
+                  <Image url="@img/book.png" />
                </image>
                <HBox.margin>
                   <Insets right="20.0" />
@@ -108,7 +86,7 @@
             </Button>
          </children>
       </HBox>
-      <ImageView blendMode="SRC_ATOP" disable="true" fitHeight="37.0" fitWidth="34.0" layoutX="564.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="564.0">
+      <ImageView blendMode="SRC_ATOP" disable="true" fitHeight="37.0" fitWidth="34.0" layoutX="378.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="378.0">
          <image>
             <Image url="@img/folder%20(2).png" />
          </image>

@@ -9,6 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <name>WritingApp</name>
 
+
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.10.0</junit.version>

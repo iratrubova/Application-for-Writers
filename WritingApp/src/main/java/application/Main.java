@@ -12,12 +12,16 @@ public class Main extends Application {
     @Override
     public void start(Stage stage)  {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/first-window.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/open-window.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            String css = this.getClass().getResource("/styles/first-window.css").toExternalForm();
             Font font = Font.loadFont(getClass().getResourceAsStream("/fonts/JetBrainsMono-Regular.ttf"), 14);
-            System.out.println(font);
-            scene.getStylesheets().add(css);
+            Font font2 = Font.loadFont(getClass().getResourceAsStream("/fonts/RubikGemstones-Regular.ttf"), 14);
+            Font font3 = Font.loadFont(getClass().getResourceAsStream("/fonts/JimNightshade-Regular.ttf"), 14);
+            scene.getStylesheets().addAll(
+                    getClass().getResource("/styles/first-window.css").toExternalForm(),
+                    getClass().getResource("/styles/open-window.css").toExternalForm()
+            );
+            System.out.println(font3);
             stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);
             stage.show();
