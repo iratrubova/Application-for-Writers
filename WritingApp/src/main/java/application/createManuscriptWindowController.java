@@ -61,6 +61,8 @@ public class createManuscriptWindowController implements Initializable {
     private Map<Button, String> projectTypesMap = new HashMap<>();
     @FXML
     private Button manuscriptCreateButton;
+    private String selectedProjectType = null;
+
 
 
     @FXML
@@ -143,6 +145,31 @@ public class createManuscriptWindowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // Add mappings for each button
+        projectTypesMap.put(shortStoryButton, "Short Story");
+        projectTypesMap.put(novelButton, "Novel");
+        projectTypesMap.put(poemButton, "Poem");
+        projectTypesMap.put(screenplayButton, "Screenplay");
+        projectTypesMap.put(playButton, "Play");
+        projectTypesMap.put(comicBookButton, "Comic Book");
+        System.out.println(projectTypesMap);
+
+
+        // Add focus listeners to each button
+        shortStoryButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                selectedProjectType = "Short Story";
+            }
+        });
+
+        novelButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                selectedProjectType = "Novel";
+            }
+        });
+
+
         manuscriptCloseWindowButton.setText("\u2715");
         manuscriptDraggedPane.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
@@ -199,16 +226,10 @@ public class createManuscriptWindowController implements Initializable {
         shortStoryButton.fire();
 
 
-        // Add mappings for each button
-        projectTypesMap.put(shortStoryButton, "Short Story");
-        projectTypesMap.put(novelButton, "Novel");
-        projectTypesMap.put(poemButton, "Poem");
-        projectTypesMap.put(screenplayButton, "Screenplay");
-        projectTypesMap.put(playButton, "Play");
-        projectTypesMap.put(comicBookButton, "Comic Book");
+
 
         // Add event handler for the "Create" button
-        manuscriptCreateButton.setOnAction(event -> createProject());
+//        manuscriptCreateButton.setOnAction(event -> createProject());
 
 
     }
@@ -223,66 +244,73 @@ public class createManuscriptWindowController implements Initializable {
         comicBookButton.setStyle("");
     }
 
-    private void createProject() {
-        // Get the selected project type
-        Button selectedButton = projectTypesMap.entrySet().stream()
-                .filter(entry -> entry.getKey().isFocused())
-                .map(Map.Entry::getKey)
-                .findFirst()
-                .orElse(null);
 
-        if (selectedButton != null) {
-            String projectType = projectTypesMap.get(selectedButton);
+
+    @FXML
+    private void handleProjectTypeSelection(ActionEvent event) {
+        Button selectedButton = (Button) event.getSource();
+        String projectType = projectTypesMap.get(selectedButton);
+
+        if (projectType != null) {
+            System.out.println("Selected Project Type: " + projectType);
+            clearFields(); // Clear text fields when a project type button is selected
+        } else {
+            System.out.println("No project type mapped to the clicked button.");
+        }
+    }
+
+    private void clearFields() {
+        manuscriptNameField.clear();
+        manuscriptLocationTextField.clear();
+        manuscriptAuthorField.clear();
+    }
+
+
+
+
+    @FXML
+    private void handleCreateButtonClick(ActionEvent event) {
+        if (selectedProjectType != null) {
             String projectName = manuscriptNameField.getText();
             String projectLocation = manuscriptLocationTextField.getText();
             String projectAuthor = manuscriptAuthorField.getText();
 
-            // Perform project creation logic based on the project type
-            switch (projectType) {
+            switch (selectedProjectType) {
                 case "Short Story":
-                    // Create a short story project
-                    ShortStory shortStory = new ShortStory(projectName, projectLocation, projectAuthor);
-                    // Perform additional actions for short story project creation
-                    saveProjectAsTxt(shortStory);
+                    createShortStoryProject(projectName, projectLocation, projectAuthor);
                     break;
                 case "Novel":
-                    // Create a novel project
-                    Novel novel = new Novel(projectName, projectLocation, projectAuthor);
-                    // Perform additional actions for novel project creation
-                    saveProjectAsTxt(novel);
+                    createNovelProject(projectName, projectLocation, projectAuthor);
                     break;
                 // Add cases for other project types
             }
-
-
-            // For example, save the project to a database or display it in a list
+        } else {
+            System.out.println("No project type selected.");
         }
     }
 
-    // Method to save the project as a .txt file
 
-
-    @FXML
-    private void handleSaveButtonAction(ActionEvent event) {
-        // Call a method to get the project information
-        Project project = getProjectInformation();
-
-        // Call the saveProjectAsTxt() method with the project information
-        saveProjectAsTxt(project);
+    private void createShortStoryProject(String projectName, String projectLocation, String projectAuthor) {
+        System.out.println("Creating Short Story Project");
+        // Create a short story project
+        ShortStory shortStory = new ShortStory(projectName, projectLocation, projectAuthor);
+        // Save the short story project
+        saveProjectAsTxt(shortStory);
     }
 
-    private Project getProjectInformation() {
-        // Implement logic to retrieve project information from UI fields
-        String name = manuscriptNameField.getText();
-        String location = manuscriptLocationTextField.getText();
-        String author = manuscriptAuthorField.getText();
-
-        // Create and return a new Project object
-        return new ShortStory(name, location, author);
+    private void createNovelProject(String projectName, String projectLocation, String projectAuthor) {
+        System.out.println("Creating Novel Project");
+        // Create a novel project
+        Novel novel = new Novel(projectName, projectLocation, projectAuthor);
+        // Save the novel project
+        saveProjectAsTxt(novel);
     }
+
+
+
     private void saveProjectAsTxt(Project project) {
         String fileName = project.getName() + ".txt";
-        String filePath = "path/to/directory/" + fileName; // Update with the actual file path
+        String filePath = project.getLocation() + File.separator + fileName;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("Project Name: " + project.getName());
@@ -290,8 +318,6 @@ public class createManuscriptWindowController implements Initializable {
             writer.write("Project Location: " + project.getLocation());
             writer.newLine();
             writer.write("Project Author: " + project.getAuthor());
-
-            // Add additional project details as needed
             writer.close();
             System.out.println("Data written to the file successfully!");
         } catch (IOException e) {
