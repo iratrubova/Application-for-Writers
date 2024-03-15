@@ -1,200 +1,227 @@
 
-.root {
-    -fx-background-color: #fafafa;
-    -fx-border-width: 1px;
-    -fx-border-color: #919191;
-    -fx-border-style: solid;
-    -fx-font-family: 'JetBrains Mono';
 
-
-
-}
-
-#closeWindowButton {
-    -fx-border: none;
-    -fx-border-radius: 100px;
-    -fx-background-color: transparent;
-    -fx-text-fill: black;
-    -fx-font-size: 16px;
-
+#leftNode {
+    -fx-background-color: #242527;
+        -fx-border-color: transparent;
+        -fx-border-width: 0;
+        -fx-border-insets: 0;
+        -fx-border-style: none;
 
 }
 
-#closeWindowButton:hover{
-    -fx-background-color: #e34011;
-    -fx-border-color: #e34011;
-    -fx-text-fill: white;
-}
 
-#smallAppName{
-    -fx-font-size: 14px;
-}
 
-#cancelButton{
-    -fx-border: 1px;
-    -fx-border-color: #787878;
-    -fx-background-color: transparent;
-}
-
-#cancelButton:hover{
-    -fx-background-color: #b5b5b5;
-}
-
-#createButton{
-      -fx-border: 1px;
-      -fx-border-color: #787878;
-      -fx-background-color: transparent;
-}
-
-#createButton:hover{
-    -fx-background-color: #b5b5b5;
-}
-
-#openProjectButton{
-    -fx-border: 1px;
-    -fx-border-color: #b0c9ed;
-    -fx-background-color: transparent;
-}
-
-#openProjectButton:pressed{
-    -fx-background-color: #b0c9ed;
-}
-
-#openProjectButton:hover{
-    -fx-background-color: #b0c9ed;
-}
-
-#createNewProjectButton{
-    -fx-border: 1px;
-    -fx-border-color: #b0c9ed;
-    -fx-background-color: transparent;
-}
-
-#createNewProjectButton:pressed{
-    -fx-background-color: #b0c9ed;
-}
-
-#createNewProjectButton:hover{
-    -fx-background-color: #b0c9ed;
-}
-
-#createNewStructureButton{
-    -fx-border: 1px;
-    -fx-border-color: #b0c9ed;
-    -fx-background-color: transparent;
-}
-
-#createNewStructureButton:pressed{
-    -fx-background-color: #b0c9ed;
-}
-
-#createNewStructureButton:hover{
-    -fx-background-color: #b0c9ed;
+#root{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+    -fx-border-style: none;
+     -fx-border-radius: 20;
+     -fx-background-radius: 20;
 }
 
 #settingsButton{
-    -fx-border: 1px;
-    -fx-border-color: #b0c9ed;
+    -fx-border-color: transparent;
     -fx-background-color: transparent;
-}
+    -fx-text-fill: #f8f8f8;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
 
-#settingsButton:pressed{
-    -fx-background-color: #b0c9ed;
+
 }
 
 #settingsButton:hover{
-    -fx-background-color: #b0c9ed;
+    -fx-background-color: transparent;
+    -fx-text-fill: #c5c6c7;
 }
 
-#typeChoiceBox{
-    -fx-border: 1px;
-    -fx-border-color: #a1a19e;
-    -fx-background-color: transparent;
+#plusButtonManuscript{
+        -fx-border-color: transparent;
+        -fx-background-color: #3698f6;
+        -fx-background-radius: 100em;
+        -fx-min-width: 40px;
+        -fx-min-height: 40px;
+
 }
 
-#nameTextField{
-    -fx-border: 1px;
-    -fx-border-color: #a1a19e;
-    -fx-background-color: transparent;
-}
-
-#locationTextField{
-    -fx-border: 1px;
-    -fx-border-color: #a1a19e;
-    -fx-background-color: transparent;
-}
-
-#authorTextField{
-    -fx-border: 1px;
-    -fx-border-color: #a1a19e;
-    -fx-background-color: transparent;
-}
-
-#browseButton{
-    -fx-border: none;
-    -fx-background-color: transparent;
+#linkVisitWebsite{
+    -fx-text-fill: #f8f8f8;
     -fx-cursor: hand;
-}
-
-
-
-.dialog-pane {
-    -fx-background-color: #fafafa;
+    -fx-font-size: 14px;
     -fx-font-family: 'JetBrains Mono';
 
 }
 
-.dialog-pane .header-panel {
-    -fx-background-color: #fafafa;
-    -fx-font-size: 18px;
+#linkVisitWebsite:hover{
+    -fx-text-fill: #c5c6c7;
 }
 
-.dialog-pane .content-panel {
-    -fx-background-color: #fafafa;
+#plusButtonProject{
+        -fx-border-color: transparent;
+        -fx-background-color: #3698f6;
+        -fx-background-radius: 100em;
+        -fx-min-width: 40px;
+        -fx-min-height: 40px;
 }
 
-.dialog-pane .header-panel .label{
-    -fx-font-size: 18px;
+#mainPane{
+    -fx-background-color: #f3f4f4;
 }
 
-.dialog-pane .content-label {
+#topPane{
+    -fx-background-color: #fff;
+}
+
+#bottomPane{
+    -fx-background-color: #fff;
+}
+
+#infoLabel{
+ -fx-text-fill: #3e3f41;
+}
+#newProjectButton{
+    -fx-background-color: #f2f2f2;
+    -fx-border-style: none;
     -fx-font-size: 12px;
-}
-
-.dialog-pane .button-bar {
-    -fx-background-color: #fafafa;
-}
-
-.dialog-pane .button-bar .button {
-    -fx-background-color: #c5c5c5;
-    -fx-text-fill: #333333;
-}
-
-.dialog-pane .button-bar .button:hover{
-    -fx-background-color: #b0c9ed;
-}
-
-#textType{
-    -fx-font-size: 16px;
-}
-
-.context-menu {
-    -fx-background-color: #fafafa;
-    -fx-text-fill: black;
     -fx-font-family: 'JetBrains Mono';
 }
 
-.menu-item {
-    -fx-text-fill: black;
+#newProjectButton:focused{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
 }
 
-.menu-item:hover {
-    -fx-background-color: #555;
+#recentProjectsButton{
+    -fx-background-color: #f2f2f2;
+    -fx-border-style: none;
+    -fx-font-size: 12px;
+    -fx-font-family: 'JetBrains Mono';
 }
 
-.menu-item:disabled:hover {
-    -fx-text-fill: grey;
+#recentProjectsButton:focused{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
 }
 
+#openFileButton{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
 
+#openFileButton:hover{
+    -fx-background-color: #0f83fe;
+    -fx-border-width: 1;
+    -fx-border-color: #0f83fe;
+    -fx-text-fill: #e2fcff;
+}
 
+#openFileButton:focused{
+    -fx-background-color: #0f83fe;
+    -fx-border-width: 1;
+    -fx-border-color: #0f83fe;
+    -fx-text-fill: #e2fcff;
+}
+
+#cancelCreatingButton{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#cancelCreatingButton:focused{
+    -fx-background-color: #0f83fe;
+    -fx-border-width: 1;
+    -fx-border-color: #0f83fe;
+    -fx-text-fill: #e2fcff;
+}
+
+#cancelCreatingButton:hover{
+    -fx-background-color: #0f83fe;
+    -fx-border-width: 1;
+    -fx-border-color: #0f83fe;
+    -fx-text-fill: #e2fcff;
+}
+
+#createProjectButton{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#createProjectButton:focused{
+    -fx-background-color: #0f83fe;
+    -fx-border-width: 1;
+    -fx-border-color: #0f83fe;
+    -fx-text-fill: #e2fcff;
+}
+
+#manuscriptImagePane:hover{
+    -fx-background-color: #dee3e9;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #000;
+}
+
+#newProjectImagePane:hover{
+    -fx-background-color: #dee3e9;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #000;
+}
+
+#newManuscriptText{
+    -fx-font-size: 12px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#newProjectText{
+    -fx-font-size: 12px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#userName{
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#infoLabel{
+    -fx-font-size: 12px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#logoText{
+    -fx-font-size: 24px;
+    -fx-font-family: 'Jim Nightshade';
+}
+
+#firstWindowLine{
+ -fx-stroke: #494a4c;
+ -fx-stroke-width: 0.5px;
+}
+
+#manuscriptProjectPane{
+    -fx-background-color: #f9fafc;
+}
+#recentProjectsPane{
+    -fx-background-color: #f9fafc;
+}
+
+#recentProjectSmallPane:hover{
+    -fx-background-color: #dee3e9;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #000;
+}
