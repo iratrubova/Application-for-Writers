@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="756.0" stylesheets="@styles/create-manuscript-scene.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.createManuscriptWindowController">
+   <top>
+      <Pane fx:id="manuscriptDraggedPane" prefHeight="43.0" prefWidth="753.0" stylesheets="@styles/create-manuscript-scene.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="manuscriptSmallLogo" fitHeight="38.0" fitWidth="36.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#handleLogoClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/book.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="manuscriptLogoText" layoutX="58.0" layoutY="6.0" text="Sketch_It">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="manuscriptCloseWindowButton" layoutX="708.0" mnemonicParsing="false" onAction="#manuscriptCloseApp" prefHeight="43.0" prefWidth="48.0" />
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <Pane fx:id="manuscriptLeftSidePane" prefHeight="485.0" prefWidth="288.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="shortStoryButton" layoutY="74.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="287.0" text="Short story" />
+            <Button fx:id="novelButton" layoutX="1.0" layoutY="128.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="287.0" text="Novel" />
+            <Button fx:id="poemButton" layoutX="1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="287.0" text="Poem" />
+            <Button fx:id="screenplayButton" layoutX="1.0" layoutY="237.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="287.0" text="Screenplay" />
+            <Button fx:id="playButton" layoutX="1.0" layoutY="290.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="287.0" text="Play" />
+            <Button fx:id="comicBookButton" layoutX="1.0" layoutY="344.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="287.0" text="Comic book script" />
+            <Label fx:id="chooseManuscriptTypeLabel" alignment="CENTER" layoutX="-3.0" layoutY="21.0" prefHeight="17.0" prefWidth="291.0" text="Choose manuscript type" />
+            <Line fx:id="manuscriptChooseTypeLine" endX="100.0" layoutX="144.0" layoutY="55.0" startX="-100.0" />
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <Pane fx:id="manuscriptRightSidePane" prefHeight="402.0" prefWidth="412.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="manuscriptTypeLabel" alignment="CENTER" layoutX="-1.0" layoutY="28.0" prefHeight="22.0" prefWidth="470.0" text="Manuscript type" />
+            <Label fx:id="manuscriptNameLabel" layoutX="34.0" layoutY="97.0" text="Name" />
+            <Label fx:id="manuscriptLocationLabel" layoutX="34.0" layoutY="158.0" text="Location" />
+            <Label fx:id="manuscriptAuthorLabel" layoutX="34.0" layoutY="216.0" text="Author" />
+            <TextField fx:id="manuscriptNameField" layoutX="115.0" layoutY="90.0" prefHeight="34.0" prefWidth="275.0" />
+            <TextField fx:id="manuscriptLocationTextField" layoutX="114.0" layoutY="151.0" prefHeight="34.0" prefWidth="278.0" />
+            <TextField fx:id="manuscriptAuthorField" layoutX="114.0" layoutY="209.0" prefHeight="34.0" prefWidth="278.0" />
+            <Button fx:id="manuscriptBrowseButton" layoutX="342.0" layoutY="152.0" mnemonicParsing="false" onAction="#manuscriptOnChooseLocation" prefHeight="32.0" prefWidth="50.0" />
+            <Button fx:id="manuscriptCreateButton" layoutX="369.0" layoutY="427.0" mnemonicParsing="false" onAction="#handleSaveButtonAction" prefHeight="38.0" prefWidth="77.0" text="Create" />
+            <Button fx:id="manuscriptCancelButton" layoutX="277.0" layoutY="427.0" mnemonicParsing="false" onAction="#manuscriptCancelCreateClose" prefHeight="38.0" prefWidth="76.0" text="Cancel" />
+            <Button fx:id="manuscriptButtonBack" layoutX="25.0" layoutY="428.0" mnemonicParsing="false" onAction="#manuscriptOnClickBack" prefHeight="37.0" prefWidth="66.0" text="Back" />
+            <ImageView disable="true" fitHeight="29.0" fitWidth="40.0" layoutX="354.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/folder_file.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

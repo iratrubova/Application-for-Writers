@@ -1,0 +1,276 @@
+
+#manuscriptCloseWindowButton{
+    -fx-border: none;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+#manuscriptCloseWindowButton:hover{
+    -fx-background-color: #e34011;
+    -fx-border-color: #e34011;
+}
+
+#manuscriptLogoText{
+    -fx-font-size: 20px;
+    -fx-font-family: 'Jim Nightshade';
+    -fx-text-fill: #f9fafc;
+}
+
+#manuscriptDraggedPane{
+    -fx-background-color: #212121;
+}
+#manuscriptBrowseButton{
+    -fx-border: none;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+#manuscriptLeftSidePane{
+    -fx-background-color: #FBFBFB;
+}
+
+#manuscriptRightSidePane{
+    -fx-background-color: #fff;
+}
+
+
+.alert .dialog-pane {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0.5, 0, 0);
+}
+
+.dialog-pane {
+    -fx-background-color: #f9fafc;
+    -fx-font-family: 'JetBrains Mono';
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0.5, 0, 0);
+    -fx-border-width: 1px;
+    -fx-border-color: #bebebe;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #fafafa;
+    -fx-font-size: 18px;
+}
+
+.dialog-pane .content-panel {
+    -fx-background-color: #fafafa;
+}
+
+.dialog-pane .header-panel .label{
+    -fx-font-size: 18px;
+}
+
+.dialog-pane .content-label {
+    -fx-font-size: 12px;
+}
+
+.dialog-pane .button-bar {
+    -fx-background-color: #fafafa;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+.dialog-pane .button-bar .button:hover{
+        -fx-background-color: #9FCEF4;
+        -fx-border-width: 1;
+        -fx-border-color: #9FCEF4;
+}
+.context-menu {
+    -fx-background-color: #fafafa;
+    -fx-text-fill: black;
+    -fx-font-family: 'JetBrains Mono';
+}
+.menu-item {
+    -fx-text-fill: black;
+}
+.menu-item:hover {
+    -fx-background-color: #555;
+}
+.menu-item:disabled:hover {
+    -fx-text-fill: grey;
+}
+
+#shortStoryButton{
+    -fx-background-color: transparent;
+    -fx-border-style: none;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#shortStoryButton:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-style: none;
+}
+
+#novelButton{
+    -fx-background-color: transparent;
+    -fx-border-style: none;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#novelButton:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-style: none;
+}
+
+#poemButton{
+    -fx-background-color: transparent;
+    -fx-border-style: none;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#poemButton:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-style: none;
+}
+
+#screenplayButton{
+    -fx-background-color: transparent;
+    -fx-border-style: none;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#screenplayButton:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-style: none;
+}
+
+#playButton{
+    -fx-background-color: transparent;
+    -fx-border-style: none;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#playButton:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-style: none;
+}
+
+#comicBookButton{
+    -fx-background-color: transparent;
+    -fx-border-style: none;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#comicBookButton:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-style: none;
+}
+
+#chooseManuscriptTypeLabel{
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Acme Regular';
+}
+
+#manuscriptTypeLabel{
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Acme Regular';
+}
+
+#manuscriptNameLabel{
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#manuscriptLocationLabel{
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#manuscriptAuthorLabel{
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#manuscriptButtonBack{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#manuscriptButtonBack:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+}
+
+#manuscriptButtonBack:focused{
+    -fx-background-color: #9FCEF4;
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+}
+
+#manuscriptCancelButton{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#manuscriptCancelButton:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+}
+
+#manuscriptCancelButton:focused{
+    -fx-background-color: #9FCEF4;
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+}
+
+#manuscriptCreateButton{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-color: #f2f2f2;
+    -fx-text-fill: #3b3b3b;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#manuscriptCreateButton:hover{
+    -fx-background-color: #9FCEF4;
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+}
+
+#manuscriptCreateButton:focused{
+    -fx-background-color: #9FCEF4;
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+}
+
+#manuscriptChooseTypeLine{
+ -fx-stroke: #494a4c;
+ -fx-stroke-width: 0.5px;
+}
+
+
+

@@ -1,0 +1,200 @@
+
+.root {
+    -fx-background-color: #fafafa;
+    -fx-border-width: 1px;
+    -fx-border-color: #919191;
+    -fx-border-style: solid;
+    -fx-font-family: 'JetBrains Mono';
+
+
+
+}
+
+#closeWindowButton {
+    -fx-border: none;
+    -fx-border-radius: 100px;
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+
+
+}
+
+#closeWindowButton:hover{
+    -fx-background-color: #e34011;
+    -fx-border-color: #e34011;
+    -fx-text-fill: white;
+}
+
+#smallAppName{
+    -fx-font-size: 14px;
+}
+
+#cancelButton{
+    -fx-border: 1px;
+    -fx-border-color: #787878;
+    -fx-background-color: transparent;
+}
+
+#cancelButton:hover{
+    -fx-background-color: #b5b5b5;
+}
+
+#createButton{
+      -fx-border: 1px;
+      -fx-border-color: #787878;
+      -fx-background-color: transparent;
+}
+
+#createButton:hover{
+    -fx-background-color: #b5b5b5;
+}
+
+#openProjectButton{
+    -fx-border: 1px;
+    -fx-border-color: #b0c9ed;
+    -fx-background-color: transparent;
+}
+
+#openProjectButton:pressed{
+    -fx-background-color: #b0c9ed;
+}
+
+#openProjectButton:hover{
+    -fx-background-color: #b0c9ed;
+}
+
+#createNewProjectButton{
+    -fx-border: 1px;
+    -fx-border-color: #b0c9ed;
+    -fx-background-color: transparent;
+}
+
+#createNewProjectButton:pressed{
+    -fx-background-color: #b0c9ed;
+}
+
+#createNewProjectButton:hover{
+    -fx-background-color: #b0c9ed;
+}
+
+#createNewStructureButton{
+    -fx-border: 1px;
+    -fx-border-color: #b0c9ed;
+    -fx-background-color: transparent;
+}
+
+#createNewStructureButton:pressed{
+    -fx-background-color: #b0c9ed;
+}
+
+#createNewStructureButton:hover{
+    -fx-background-color: #b0c9ed;
+}
+
+#settingsButton{
+    -fx-border: 1px;
+    -fx-border-color: #b0c9ed;
+    -fx-background-color: transparent;
+}
+
+#settingsButton:pressed{
+    -fx-background-color: #b0c9ed;
+}
+
+#settingsButton:hover{
+    -fx-background-color: #b0c9ed;
+}
+
+#typeChoiceBox{
+    -fx-border: 1px;
+    -fx-border-color: #a1a19e;
+    -fx-background-color: transparent;
+}
+
+#nameTextField{
+    -fx-border: 1px;
+    -fx-border-color: #a1a19e;
+    -fx-background-color: transparent;
+}
+
+#locationTextField{
+    -fx-border: 1px;
+    -fx-border-color: #a1a19e;
+    -fx-background-color: transparent;
+}
+
+#authorTextField{
+    -fx-border: 1px;
+    -fx-border-color: #a1a19e;
+    -fx-background-color: transparent;
+}
+
+#browseButton{
+    -fx-border: none;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+
+
+.dialog-pane {
+    -fx-background-color: #fafafa;
+    -fx-font-family: 'JetBrains Mono';
+
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #fafafa;
+    -fx-font-size: 18px;
+}
+
+.dialog-pane .content-panel {
+    -fx-background-color: #fafafa;
+}
+
+.dialog-pane .header-panel .label{
+    -fx-font-size: 18px;
+}
+
+.dialog-pane .content-label {
+    -fx-font-size: 12px;
+}
+
+.dialog-pane .button-bar {
+    -fx-background-color: #fafafa;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: #c5c5c5;
+    -fx-text-fill: #333333;
+}
+
+.dialog-pane .button-bar .button:hover{
+    -fx-background-color: #b0c9ed;
+}
+
+#textType{
+    -fx-font-size: 16px;
+}
+
+.context-menu {
+    -fx-background-color: #fafafa;
+    -fx-text-fill: black;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+.menu-item {
+    -fx-text-fill: black;
+}
+
+.menu-item:hover {
+    -fx-background-color: #555;
+}
+
+.menu-item:disabled:hover {
+    -fx-text-fill: grey;
+}
+
+
+
