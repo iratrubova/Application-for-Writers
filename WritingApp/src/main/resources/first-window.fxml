@@ -28,9 +28,9 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="userImage" fitHeight="30.0" fitWidth="32.0" layoutX="23.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="userImage" fitHeight="23.0" fitWidth="23.0" layoutX="27.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/user6.png" />
+                        <Image url="@img/user.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="userName" layoutX="57.0" layoutY="99.0" text="username" textFill="WHITE">
