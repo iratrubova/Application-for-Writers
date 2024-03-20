@@ -265,7 +265,9 @@ public class createManuscriptWindowController implements Initializable {
                 clearFields();
             }
         });
+
         manuscriptCloseWindowButton.setText("\u2715");
+
         manuscriptDraggedPane.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();

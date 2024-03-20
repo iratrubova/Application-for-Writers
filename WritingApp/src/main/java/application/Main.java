@@ -22,7 +22,7 @@ public class Main extends Application {
             Font font3 = Font.loadFont(getClass().getResourceAsStream("/fonts/Acme-Regular.ttf"), 14);
             String cssFilePath = getClass().getResource("/styles/first-window.css").toExternalForm();
             scene.getStylesheets().add(cssFilePath);
-            System.out.println(font3);
+            System.out.println(font);
             stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);
             stage.show();

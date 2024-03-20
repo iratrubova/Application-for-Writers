@@ -20,7 +20,7 @@
      -fx-background-radius: 20;
 }
 
-#settingsButton{
+#openSettingsButton{
     -fx-border-color: transparent;
     -fx-background-color: transparent;
     -fx-text-fill: #f8f8f8;
@@ -31,7 +31,7 @@
 
 }
 
-#settingsButton:hover{
+#openSettingsButton:hover{
     -fx-background-color: transparent;
     -fx-text-fill: #c5c6c7;
 }

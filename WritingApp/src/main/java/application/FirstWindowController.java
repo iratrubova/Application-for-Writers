@@ -41,6 +41,8 @@ public class FirstWindowController implements Initializable {
     private Pane topPane;
     @FXML
     private Button newProjectButton;
+    @FXML
+    private Button openSettingsButton;
 
     @FXML
     private void openProject(ActionEvent event) {
@@ -136,6 +138,21 @@ public class FirstWindowController implements Initializable {
         try {
             Desktop.getDesktop().browse(new URI("https://github.com/iratrubova"));
         } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void openSettingsWindow(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/settings.fxml"));
+            Scene sceneSettings = new Scene(loader.load());
+            String cssFilePath = getClass().getResource("/styles/settings.css").toExternalForm();
+            sceneSettings.getStylesheets().add(cssFilePath);
+            Stage stageSettings = (Stage) openSettingsButton.getScene().getWindow();
+            stageSettings.setScene(sceneSettings);
+            stageSettings.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

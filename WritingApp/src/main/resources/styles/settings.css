@@ -1,0 +1,20 @@
+#settingsCloseWindowButton{
+    -fx-border: none;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+#settingsCloseWindowButton:hover{
+    -fx-background-color: #e34011;
+    -fx-border-color: #e34011;
+}
+
+#settingsLogoText{
+    -fx-font-size: 20px;
+    -fx-font-family: 'Jim Nightshade';
+    -fx-text-fill: #f9fafc;
+}
+
+#settingsDraggedPane{
+    -fx-background-color: #212121;
+}
