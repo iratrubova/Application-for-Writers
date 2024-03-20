@@ -80,21 +80,6 @@
         -fx-border-color: #9FCEF4;
 }
 
-.context-menu {
-    -fx-background-color: #fafafa;
-    -fx-text-fill: black;
-    -fx-font-family: 'JetBrains Mono';
-}
-.menu-item {
-    -fx-text-fill: black;
-}
-.menu-item:hover {
-    -fx-background-color: #555;
-}
-.menu-item:disabled:hover {
-    -fx-text-fill: grey;
-}
-
 .check-box{
     -fx-padding: 10px 0 0 0;
 }
@@ -125,7 +110,7 @@
 
 
 
-#shortStoryButton{
+#shortStoryManuscriptButton{
     -fx-background-color: transparent;
     -fx-border-style: none;
     -fx-text-fill: #3b3b3b;
@@ -133,12 +118,12 @@
     -fx-font-family: 'JetBrains Mono';
 }
 
-#shortStoryButton:hover{
+#shortStoryManuscriptButton:hover{
     -fx-background-color: #9FCEF4;
     -fx-border-style: none;
 }
 
-#novelButton{
+#novelManuscriptButton{
     -fx-background-color: transparent;
     -fx-border-style: none;
     -fx-text-fill: #3b3b3b;
@@ -146,12 +131,12 @@
     -fx-font-family: 'JetBrains Mono';
 }
 
-#novelButton:hover{
+#novelManuscriptButton:hover{
     -fx-background-color: #9FCEF4;
     -fx-border-style: none;
 }
 
-#poemButton{
+#poemManuscriptButton{
     -fx-background-color: transparent;
     -fx-border-style: none;
     -fx-text-fill: #3b3b3b;
@@ -159,12 +144,12 @@
     -fx-font-family: 'JetBrains Mono';
 }
 
-#poemButton:hover{
+#poemManuscriptButton:hover{
     -fx-background-color: #9FCEF4;
     -fx-border-style: none;
 }
 
-#screenplayButton{
+#screenplayManuscriptButton{
     -fx-background-color: transparent;
     -fx-border-style: none;
     -fx-text-fill: #3b3b3b;
@@ -172,12 +157,12 @@
     -fx-font-family: 'JetBrains Mono';
 }
 
-#screenplayButton:hover{
+#screenplayManuscriptButton:hover{
     -fx-background-color: #9FCEF4;
     -fx-border-style: none;
 }
 
-#playButton{
+#playManuscriptButton{
     -fx-background-color: transparent;
     -fx-border-style: none;
     -fx-text-fill: #3b3b3b;
@@ -185,12 +170,12 @@
     -fx-font-family: 'JetBrains Mono';
 }
 
-#playButton:hover{
+#playManuscriptButton:hover{
     -fx-background-color: #9FCEF4;
     -fx-border-style: none;
 }
 
-#comicBookButton{
+#comicBookManuscriptButton{
     -fx-background-color: transparent;
     -fx-border-style: none;
     -fx-text-fill: #3b3b3b;
@@ -198,7 +183,7 @@
     -fx-font-family: 'JetBrains Mono';
 }
 
-#comicBookButton:hover{
+#comicBookManuscriptButton:hover{
     -fx-background-color: #9FCEF4;
     -fx-border-style: none;
 }
@@ -299,6 +284,27 @@
 #manuscriptChooseTypeLine{
  -fx-stroke: #494a4c;
  -fx-stroke-width: 0.5px;
+}
+
+#manuscriptNameField:focused{
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#manuscriptLocationTextField:focused{
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
+}
+
+#manuscriptAuthorField:focused{
+    -fx-border-width: 1;
+    -fx-border-color: #9FCEF4;
+    -fx-font-size: 14px;
+    -fx-font-family: 'JetBrains Mono';
 }
 
 

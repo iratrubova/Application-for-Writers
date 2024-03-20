@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="projectBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="756.0" stylesheets="@styles/create-manuscript-scene.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.createProjectWindowController">
+   <top>
+      <Pane fx:id="projectDraggedPane" prefHeight="43.0" prefWidth="753.0" stylesheets="@styles/create-manuscript-scene.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="projectSmallLogo" fitHeight="38.0" fitWidth="36.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#handleLogoClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/book.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="projectLogoText" layoutX="58.0" layoutY="6.0" text="Sketch_It">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="projectCloseWindowButton" layoutX="708.0" mnemonicParsing="false" onAction="#projectCloseApp" prefHeight="43.0" prefWidth="48.0" />
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <Pane fx:id="projectLeftSidePane" prefHeight="485.0" prefWidth="288.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="shortStoryProjectButton" layoutY="74.0" mnemonicParsing="false" onAction="#handleProjectTypeSelection" prefHeight="48.0" prefWidth="287.0" text="Short story" />
+            <Button fx:id="novelProjectButton" layoutX="1.0" layoutY="128.0" mnemonicParsing="false" onAction="#handleProjectTypeSelection" prefHeight="48.0" prefWidth="287.0" text="Novel" />
+            <Button fx:id="poemProjectButton" layoutX="1.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleProjectTypeSelection" prefHeight="48.0" prefWidth="287.0" text="Poem" />
+            <Button fx:id="screenplayProjectButton" layoutX="1.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleProjectTypeSelection" prefHeight="48.0" prefWidth="287.0" text="Screenplay" />
+            <Button fx:id="playProjectButton" layoutX="1.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleProjectTypeSelection" prefHeight="48.0" prefWidth="287.0" text="Play" />
+            <Button fx:id="comicBookProjectButton" layoutX="1.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleProjectTypeSelection" prefHeight="48.0" prefWidth="287.0" text="Comic book script" />
+            <Label fx:id="chooseProjectTypeLabel" alignment="CENTER" layoutX="-3.0" layoutY="21.0" prefHeight="17.0" prefWidth="291.0" text="Choose project type" />
+            <Line fx:id="manuscriptChooseTypeLine" endX="100.0" layoutX="144.0" layoutY="55.0" startX="-100.0" />
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <Pane fx:id="projectRightSidePane" prefHeight="402.0" prefWidth="412.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="projectTypeLabel" alignment="CENTER" layoutX="-1.0" layoutY="28.0" prefHeight="22.0" prefWidth="470.0" text="Manuscript type" />
+            <Label fx:id="projectNameLabel" layoutX="34.0" layoutY="97.0" text="Name" />
+            <Label fx:id="projectLocationLabel" layoutX="34.0" layoutY="158.0" text="Location" />
+            <Label fx:id="projectAuthorLabel" layoutX="34.0" layoutY="216.0" text="Author" />
+            <TextField fx:id="projectNameField" layoutX="115.0" layoutY="90.0" prefHeight="34.0" prefWidth="275.0" />
+            <TextField fx:id="projectLocationTextField" layoutX="114.0" layoutY="151.0" prefHeight="34.0" prefWidth="278.0" />
+            <TextField fx:id="projectAuthorField" layoutX="114.0" layoutY="209.0" prefHeight="34.0" prefWidth="278.0" />
+            <Button fx:id="projectBrowseButton" layoutX="342.0" layoutY="152.0" mnemonicParsing="false" onAction="#projectOnChooseLocation" prefHeight="32.0" prefWidth="50.0" />
+            <Button fx:id="projectCreateButton" layoutX="369.0" layoutY="427.0" mnemonicParsing="false" onAction="#handleCreateProjectButtonClick" prefHeight="38.0" prefWidth="77.0" text="Create" />
+            <Button fx:id="projectCancelButton" layoutX="277.0" layoutY="427.0" mnemonicParsing="false" onAction="#projectCancelCreateClose" prefHeight="38.0" prefWidth="76.0" text="Cancel" />
+            <Button fx:id="projectButtonBack" layoutX="25.0" layoutY="428.0" mnemonicParsing="false" onAction="#projectOnClickBack" prefHeight="37.0" prefWidth="66.0" text="Back" />
+            <ImageView disable="true" fitHeight="29.0" fitWidth="40.0" layoutX="354.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/folder_file.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

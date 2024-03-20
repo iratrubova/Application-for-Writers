@@ -20,11 +20,8 @@ public class Main extends Application {
             Font font = Font.loadFont(getClass().getResourceAsStream("/fonts/JetBrainsMono-Regular.ttf"), 14);
             Font font2 = Font.loadFont(getClass().getResourceAsStream("/fonts/JimNightshade-Regular.ttf"), 14);
             Font font3 = Font.loadFont(getClass().getResourceAsStream("/fonts/Acme-Regular.ttf"), 14);
-            scene.getStylesheets().addAll(
-                    getClass().getResource("/styles/create-manuscript-scene.css").toExternalForm(),
-                    getClass().getResource("/styles/create-project-scene.css").toExternalForm(),
-                    getClass().getResource("/styles/first-window.css").toExternalForm()
-            );
+            String cssFilePath = getClass().getResource("/styles/first-window.css").toExternalForm();
+            scene.getStylesheets().add(cssFilePath);
             System.out.println(font3);
             stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);

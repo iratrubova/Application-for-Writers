@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -24,39 +25,40 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
-public class createManuscriptWindowController implements Initializable {
-
+public class createProjectWindowController implements Initializable {
     @FXML
-    private TextField manuscriptLocationTextField;
+    private TextField projectLocationTextField;
     @FXML
-    private TextField manuscriptNameField;
+    private TextField projectNameField;
     @FXML
-    private TextField manuscriptAuthorField;
+    private TextField projectAuthorField;
     @FXML
-    private Button manuscriptCloseWindowButton;
+    private Button projectCloseWindowButton;
     @FXML
-    private ImageView manuscriptSmallLogo;
+    private ImageView projectSmallLogo;
     @FXML
-    private Pane manuscriptDraggedPane;
+    private Pane projectDraggedPane;
     private double xOffset = 0;
     private double yOffset = 0;
     @FXML
-    private Button manuscriptButtonBack;
+    private Button projectButtonBack;
     @FXML
-    private Label manuscriptTypeLabel;
+    private Label projectTypeLabel;
     @FXML
-    private Button shortStoryManuscriptButton, novelManuscriptButton, poemManuscriptButton, screenplayManuscriptButton, playManuscriptButton, comicBookManuscriptButton;
-    private final Map<Button, String> manuscriptTypesMap = new HashMap<>();
-    private String selectedManuscriptType = null;
+    private Button shortStoryProjectButton, novelProjectButton, poemProjectButton, screenplayProjectButton, playProjectButton, comicBookProjectButton;
+    private final Map<Button, String> projectTypesMap = new HashMap<>();
+    private String selectedProjectType = null;
     private static final String DONT_ASK_AGAIN_KEY = "dontAskAgain";
+    @FXML
+    private BorderPane projectBorderPane;
 
 
     @FXML
-    private void manuscriptOnClickBack() {
+    private void projectOnClickBack() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/first-window.fxml"));
             Scene sceneFirstWindow = new Scene(loader.load());
-            Stage stageFirstWindow = (Stage) manuscriptButtonBack.getScene().getWindow();
+            Stage stageFirstWindow = (Stage) projectButtonBack.getScene().getWindow();
             stageFirstWindow.setScene(sceneFirstWindow);
             stageFirstWindow.show();
         } catch (IOException e) {
@@ -69,40 +71,40 @@ public class createManuscriptWindowController implements Initializable {
     private void handleLogoClick(MouseEvent event) {
         ContextMenu contextMenu = new ContextMenu();
         MenuItem itemRestore = new MenuItem("Restore");
-        itemRestore.setOnAction(e -> ((Stage) manuscriptSmallLogo.getScene().getWindow()).setIconified(false));
+        itemRestore.setOnAction(e -> ((Stage) projectSmallLogo.getScene().getWindow()).setIconified(false));
         ImageView restoreIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/restore.png")));
         restoreIcon.setFitWidth(16);
         restoreIcon.setFitHeight(16);
         itemRestore.setGraphic(restoreIcon);
         MenuItem itemMinimize = new MenuItem("Minimize");
-        itemMinimize.setOnAction(e -> ((Stage) manuscriptSmallLogo.getScene().getWindow()).setIconified(true));
+        itemMinimize.setOnAction(e -> ((Stage) projectSmallLogo.getScene().getWindow()).setIconified(true));
         ImageView minimizeIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/minimize_.png")));
         minimizeIcon.setFitWidth(16);
         minimizeIcon.setFitHeight(16);
         itemMinimize.setGraphic(minimizeIcon);
         MenuItem itemMaximize = new MenuItem("Maximize");
-        itemMaximize.setOnAction(e -> ((Stage) manuscriptSmallLogo.getScene().getWindow()).setMaximized(false));
+        itemMaximize.setOnAction(e -> ((Stage) projectSmallLogo.getScene().getWindow()).setMaximized(false));
         itemMaximize.setDisable(true);
         MenuItem itemClose = new MenuItem("Close");
-        itemClose.setOnAction(e -> ((Stage) manuscriptSmallLogo.getScene().getWindow()).close());
+        itemClose.setOnAction(e -> ((Stage) projectSmallLogo.getScene().getWindow()).close());
         ImageView closeIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/close.png")));
         closeIcon.setFitWidth(16);
         closeIcon.setFitHeight(16);
         itemClose.setGraphic(closeIcon);
         contextMenu.getItems().addAll(itemRestore, itemMinimize, itemMaximize, itemClose);
         // Retrieve the Scene object from any node in the scene
-        Scene scene = manuscriptSmallLogo.getScene();
+        Scene scene = projectSmallLogo.getScene();
         if (scene != null) {
             // Load CSS file for context menu styling
             scene.getStylesheets().add(getClass().getResource("/styles/context_menu.css").toExternalForm());
         }
-        contextMenu.show(manuscriptSmallLogo, event.getScreenX(), event.getScreenY());
+        contextMenu.show(projectSmallLogo, event.getScreenX(), event.getScreenY());
     }
 
 
     @FXML
-    private void manuscriptCloseApp() {
-        Stage stage = (Stage) manuscriptCloseWindowButton.getScene().getWindow();
+    private void projectCloseApp() {
+        Stage stage = (Stage) projectCloseWindowButton.getScene().getWindow();
         if (!loadDontAskAgainPreference()) {
             showCloseConfirmationDialog(stage);
         } else {
@@ -118,7 +120,7 @@ public class createManuscriptWindowController implements Initializable {
         dialog.initStyle(StageStyle.UNDECORATED);
         DialogPane dialogPaneCustom = dialog.getDialogPane();
         dialogPaneCustom.getStylesheets().add(
-                getClass().getResource("/styles/create-manuscript-scene.css").toExternalForm()
+                getClass().getResource("/styles/create-project-scene.css").toExternalForm()
         );
         dialog.setTitle("Confirmation");
         dialog.setHeaderText("Do you want to exit?");
@@ -190,7 +192,7 @@ public class createManuscriptWindowController implements Initializable {
 
 
     @FXML
-    public void manuscriptCancelCreateClose(ActionEvent event) {
+    public void projectCancelCreateClose(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.initStyle(StageStyle.UNDECORATED);
         alert.setTitle("Closing");
@@ -204,7 +206,7 @@ public class createManuscriptWindowController implements Initializable {
         alert.getDialogPane().setGraphic(imageView);
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(
-                getClass().getResource("/styles/create-manuscript-scene.css").toExternalForm()
+                getClass().getResource("/styles/create-project-scene.css").toExternalForm()
         );
         Font font = Font.loadFont(getClass().getResourceAsStream("/fonts/JetBrainsMono-Regular.ttf"), 14);
         System.out.println(font);
@@ -218,122 +220,122 @@ public class createManuscriptWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         // Add mappings for each button
-        manuscriptTypesMap.put(shortStoryManuscriptButton, "Short Story");
-        manuscriptTypesMap.put(novelManuscriptButton, "Novel");
-        manuscriptTypesMap.put(poemManuscriptButton, "Poem");
-        manuscriptTypesMap.put(screenplayManuscriptButton, "Screenplay");
-        manuscriptTypesMap.put(playManuscriptButton, "Play");
-        manuscriptTypesMap.put(comicBookManuscriptButton, "Comic Book");
-        System.out.println(manuscriptTypesMap);
+        projectTypesMap.put(shortStoryProjectButton, "Short Story");
+        projectTypesMap.put(novelProjectButton, "Novel");
+        projectTypesMap.put(poemProjectButton, "Poem");
+        projectTypesMap.put(screenplayProjectButton, "Screenplay");
+        projectTypesMap.put(playProjectButton, "Play");
+        projectTypesMap.put(comicBookProjectButton, "Comic Book");
+        System.out.println(projectTypesMap);
 
-        selectedManuscriptType = "Short Story";
+        selectedProjectType = "Short Story";
         clearFields();
         // Add focus listeners to each button
-        shortStoryManuscriptButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
+        shortStoryProjectButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                selectedManuscriptType = "Short Story";
+                selectedProjectType = "Short Story";
                 clearFields();
             }
         });
-        novelManuscriptButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
+        novelProjectButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                selectedManuscriptType = "Novel";
+                selectedProjectType = "Novel";
                 clearFields();
             }
         });
-        poemManuscriptButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
+        poemProjectButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                selectedManuscriptType = "Poem";
+                selectedProjectType = "Poem";
                 clearFields();
             }
         });
-        screenplayManuscriptButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
+        screenplayProjectButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                selectedManuscriptType = "Screenplay";
+                selectedProjectType = "Screenplay";
                 clearFields();
             }
         });
-        playManuscriptButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
+        playProjectButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                selectedManuscriptType = "Play";
+                selectedProjectType = "Play";
                 clearFields();
             }
         });
-        comicBookManuscriptButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
+        comicBookProjectButton.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                selectedManuscriptType = "Comic Book";
+                selectedProjectType = "Comic Book";
                 clearFields();
             }
         });
-        manuscriptCloseWindowButton.setText("\u2715");
-        manuscriptDraggedPane.setOnMousePressed(event -> {
+        projectCloseWindowButton.setText("\u2715");
+        projectDraggedPane.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();
         });
-        manuscriptDraggedPane.setOnMouseDragged(event -> {
-            Stage stage = (Stage) manuscriptDraggedPane.getScene().getWindow();
+        projectDraggedPane.setOnMouseDragged(event -> {
+            Stage stage = (Stage) projectDraggedPane.getScene().getWindow();
             stage.setX(event.getScreenX() - xOffset);
             stage.setY(event.getScreenY() - yOffset);
         });
 
         // Set the button to be focused by default
-        shortStoryManuscriptButton.requestFocus();
-        shortStoryManuscriptButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
+        shortStoryProjectButton.requestFocus();
+        shortStoryProjectButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
 
-        shortStoryManuscriptButton.setOnAction(event -> {
-            manuscriptTypeLabel.setText("Short story manuscript");
+        shortStoryProjectButton.setOnAction(event -> {
+            projectTypeLabel.setText("Short story project");
             clearFocusedStyle();
-            shortStoryManuscriptButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
+            shortStoryProjectButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
         });
-        novelManuscriptButton.setOnAction(event -> {
-            manuscriptTypeLabel.setText("Novel manuscript");
+        novelProjectButton.setOnAction(event -> {
+            projectTypeLabel.setText("Novel project");
             clearFocusedStyle();
-            novelManuscriptButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
+            novelProjectButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
         });
-        poemManuscriptButton.setOnAction(event -> {
-            manuscriptTypeLabel.setText("Poem manuscript");
+        poemProjectButton.setOnAction(event -> {
+            projectTypeLabel.setText("Poem project");
             clearFocusedStyle();
-            poemManuscriptButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
+            poemProjectButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
         });
-        screenplayManuscriptButton.setOnAction(event -> {
-            manuscriptTypeLabel.setText("Screenplay manuscript");
+        screenplayProjectButton.setOnAction(event -> {
+            projectTypeLabel.setText("Screenplay project");
             clearFocusedStyle();
-            screenplayManuscriptButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
+            screenplayProjectButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
         });
-        playManuscriptButton.setOnAction(event -> {
-            manuscriptTypeLabel.setText("Play manuscript");
+        playProjectButton.setOnAction(event -> {
+            projectTypeLabel.setText("Play project");
             clearFocusedStyle();
-            playManuscriptButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
+            playProjectButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
         });
-        comicBookManuscriptButton.setOnAction(event -> {
-            manuscriptTypeLabel.setText("Comic book manuscript");
+        comicBookProjectButton.setOnAction(event -> {
+            projectTypeLabel.setText("Comic book project");
             clearFocusedStyle();
-            comicBookManuscriptButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
+            comicBookProjectButton.setStyle("-fx-background-color: #9FCEF4; -fx-border-style: none;");
         });
         // Simulate click on the first button to set initial label
-        shortStoryManuscriptButton.fire();
+        shortStoryProjectButton.fire();
 
     }
     private void clearFields() {
-        manuscriptNameField.clear();
-        manuscriptLocationTextField.clear();
-        manuscriptAuthorField.clear();
+        projectNameField.clear();
+        projectLocationTextField.clear();
+        projectAuthorField.clear();
     }
 
     private void clearFocusedStyle() {
         // Remove focused style from all buttons
-        shortStoryManuscriptButton.setStyle("");
-        novelManuscriptButton.setStyle("");
-        poemManuscriptButton.setStyle("");
-        screenplayManuscriptButton.setStyle("");
-        playManuscriptButton.setStyle("");
-        comicBookManuscriptButton.setStyle("");
+        shortStoryProjectButton.setStyle("");
+        novelProjectButton.setStyle("");
+        poemProjectButton.setStyle("");
+        screenplayProjectButton.setStyle("");
+        playProjectButton.setStyle("");
+        comicBookProjectButton.setStyle("");
     }
 
     @FXML
-    private void handleManuscriptTypeSelection(ActionEvent event) {
+    private void handleProjectTypeSelection(ActionEvent event) {
         Button selectedButton = (Button) event.getSource();
-        String projectType = manuscriptTypesMap.get(selectedButton);
+        String projectType = projectTypesMap.get(selectedButton);
 
         if (projectType != null) {
             System.out.println("Selected Project Type: " + projectType);
@@ -343,18 +345,18 @@ public class createManuscriptWindowController implements Initializable {
     }
 
     @FXML
-    private void handleCreateButtonClick(ActionEvent event) {
+    private void handleCreateProjectButtonClick(ActionEvent event) {
         // Find the selected project type
-        for (Button button : manuscriptTypesMap.keySet()) {
+        for (Button button : projectTypesMap.keySet()) {
             if (button.isFocused()) {
-                selectedManuscriptType = manuscriptTypesMap.get(button);
+                selectedProjectType = projectTypesMap.get(button);
                 break;
             }
         }
-        if (selectedManuscriptType != null) {
-            String projectName = manuscriptNameField.getText();
-            String projectLocation = manuscriptLocationTextField.getText();
-            String projectAuthor = manuscriptAuthorField.getText();
+        if (selectedProjectType != null) {
+            String projectName = projectNameField.getText();
+            String projectLocation = projectLocationTextField.getText();
+            String projectAuthor = projectAuthorField.getText();
 
             // Check if any of the fields are empty
             if (projectName.isEmpty() || projectLocation.isEmpty() || projectAuthor.isEmpty()) {
@@ -394,7 +396,7 @@ public class createManuscriptWindowController implements Initializable {
 
 
 
-            switch (selectedManuscriptType) {
+            switch (selectedProjectType) {
                 case "Short Story":
                     createShortStoryProject(projectName, projectLocation, projectAuthor);
                     break;
@@ -432,7 +434,7 @@ public class createManuscriptWindowController implements Initializable {
         alertEmptyFields.getDialogPane().setGraphic(imageView);
         DialogPane dialogPane = alertEmptyFields.getDialogPane();
         dialogPane.getStylesheets().add(
-                getClass().getResource("/styles/create-manuscript-scene.css").toExternalForm()
+                getClass().getResource("/styles/create-project-scene.css").toExternalForm()
         );
         alertEmptyFields.showAndWait();
     }
@@ -504,11 +506,11 @@ public class createManuscriptWindowController implements Initializable {
 
 
     @FXML
-    private void manuscriptOnChooseLocation() {
+    private void projectOnChooseLocation() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Select Installation Location");
         // Set the initial directory to the user's home or current label text
-        File initialDirectory = new File(manuscriptLocationTextField.getText());
+        File initialDirectory = new File(projectLocationTextField.getText());
         if (initialDirectory.exists() && initialDirectory.isDirectory()) {
             directoryChooser.setInitialDirectory(initialDirectory);
         }
@@ -522,34 +524,11 @@ public class createManuscriptWindowController implements Initializable {
             // Trim the path if it exceeds maxCharacters
             if (directoryPath.length() > maxCharacters) {
                 String trimmedPath = directoryPath.substring(0, maxCharacters - 3) + "...";
-                manuscriptLocationTextField.setText(trimmedPath);
+                projectLocationTextField.setText(trimmedPath);
             } else {
-                manuscriptLocationTextField.setText(directoryPath);
+                projectLocationTextField.setText(directoryPath);
             }
 
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

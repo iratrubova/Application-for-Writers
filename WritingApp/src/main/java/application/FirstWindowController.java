@@ -1,5 +1,6 @@
 package application;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,13 +11,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import java.awt.Desktop;
+
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+
 
 
 public class FirstWindowController implements Initializable {
@@ -35,6 +39,8 @@ public class FirstWindowController implements Initializable {
     private double yOffset = 0;
     @FXML
     private Pane topPane;
+    @FXML
+    private Button newProjectButton;
 
     @FXML
     private void openProject(ActionEvent event) {
@@ -58,6 +64,13 @@ public class FirstWindowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Show create project files pane by default
+        showCreateProjectFiles();
+        // Set newProjectButton to be focused by default after the scene is shown
+        Platform.runLater(() -> {
+            newProjectButton.requestFocus();
+        });
+
         manuscriptProjectPane.setVisible(true);
         recentProjectsPane.setVisible(false);
         topPane.setOnMousePressed(event -> {
@@ -70,6 +83,7 @@ public class FirstWindowController implements Initializable {
             stage.setX(event.getScreenX() - xOffset);
             stage.setY(event.getScreenY() - yOffset);
         });
+
     }
 
     @FXML
@@ -91,6 +105,8 @@ public class FirstWindowController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/create-manuscript-scene.fxml"));
             Scene sceneManuscript = new Scene(loader.load());
+            String cssFilePath = getClass().getResource("/styles/create-manuscript-scene.css").toExternalForm();
+            sceneManuscript.getStylesheets().add(cssFilePath);
             Stage stageManuscript = (Stage) plusButtonManuscript.getScene().getWindow();
             stageManuscript.setScene(sceneManuscript);
             stageManuscript.show();
@@ -104,6 +120,8 @@ public class FirstWindowController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/create-project-scene.fxml"));
             Scene sceneProject = new Scene(loader.load());
+            String cssFilePath = getClass().getResource("/styles/create-project-scene.css").toExternalForm();
+            sceneProject.getStylesheets().add(cssFilePath);
             Stage stageProject = (Stage) plusButtonProject.getScene().getWindow();
             stageProject.setScene(sceneProject);
             stageProject.show();
